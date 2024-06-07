@@ -1,1 +1,1 @@
-,,,,,,,,
+This week, I learned the most basic introductory programming knowledge. I still have some confusion about the basic logic and principles.
