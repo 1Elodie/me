@@ -14,11 +14,11 @@ def is_odd(a_number):
 
     e.g. 4 % 2 = 0
         13 %12 = 1
-         3 % 2 = 1
+        3 % 2 = 1
 
     So if a_number modulo two is zero, then it's even.
     """
-    return None
+    return a_number % 2 == 1
 
 
 def fix_it(moves=True, should_move=True):
@@ -36,7 +36,12 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+    if moves == should_move:
+        return "No Problem"
+    elif moves:
+        return "Duct Tape"
+    else:
+        return "WD-40"
 
 
 def loops_preview():
@@ -46,10 +51,8 @@ def loops_preview():
     return a list of 8 items, each one a string with exacly one 💩 in it.
     E.g.: ['💩', '💩', '💩', '💩', '💩', '💩', '💩', '💩']
     """
-    choc_list = []
-    for i in range(8):
-        choc_list.append("💩")
-    return choc_list
+
+    return ['💩' for _ in range(8)]
 
 
 def loops_1a():
@@ -59,7 +62,7 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    return ['*' for i in range(10)]
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -72,7 +75,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     Remember that you're being passed arguments here. Don't hard code the number
     or the symbol, let it be whatever it wants to be.
     """
-    return None
+    return [symbol for _ in range(number_of_items)]
 
 
 def loops_2_preview():
@@ -85,15 +88,9 @@ def loops_2_preview():
             ['💩', '💩', '💩', '💩'],
             ['💩', '💩', '💩', '💩'],
             ['💩', '💩', '💩', '💩'],
-          ]
+        ]
     """
-    field = []
-    for i in range(4):
-        row = []
-        for j in range(4):
-            row.append("💩")
-        field.append(row)
-    return field
+    return[['💩' for _ in range(4)] for i in range(4)]
 
 
 def loops_2():
@@ -114,7 +111,7 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    return [['*' for _ in range(10)] for _ in range(10)]
 
 
 def loops_3():
@@ -136,9 +133,9 @@ def loops_3():
     remember that range(10) produces a list of numbers from 0...9
     So for every step produced by `for i in range(10):` i is a different number
     TIP: notice that this needs to to return strings of numbers,
-         so call str(number) to cast.
+        so call str(number) to cast.
     """
-    return None
+    return [[str(i)for x in range(10)] for i in range(10)]
 
 
 def loops_4():
@@ -158,7 +155,7 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    return [[str(i) for i in range(10)] for i in range(10)]
 
 
 def loops_5():
@@ -188,7 +185,16 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    return [['(i'+str(x)+',j'+str(y)+')' for y in range(5)] for x in range(10)]
+
+    '''number_square=[]
+    for i in range(10):
+        coordinates_row=[]
+        for j in range(5):
+            coordinates_row.append('(i{},j{})'.format(i,j))
+        number_square.append(coordinates_row)
+    print(number_square)
+    '''
 
 
 def loops_6():
@@ -211,7 +217,7 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    return [[str(x) for x in range(y+1)] for y in range(10)]
 
 
 def loops_7():
@@ -235,7 +241,9 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    return [[(' ' if x<4-y or x>4+y else '*') for x in range(9)] for y in range(5)]
+
+
 
 
 if __name__ == "__main__":
@@ -248,8 +256,8 @@ if __name__ == "__main__":
         minitest(is_odd, [1], True)
         minitest(is_odd, [4], False)
         minitest(fix_it, [True, True], "No Problem")
-        minitest(fix_it, [True, False], "WD-40")
-        minitest(fix_it, [False, True], "Duct Tape")
+        minitest(fix_it, [False, True], "WD-40")
+        minitest(fix_it, [True, False], "Duct Tape")
         minitest(fix_it, [False, False], "No Problem")
         little_printer(loops_preview(), "loops_preview")
         little_printer(loops_1a(), "loops_1a")
