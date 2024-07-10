@@ -27,8 +27,38 @@ def advancedGuessingGame():
     in several places.
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
-    """
 
+    def get_valid_integer(prompt):
+    
+    Prompt the user for a valid integer.
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a valid integer.")
+
+def advancedGuessingGame():
+    print("Welcome to the Advanced Guessing Game!")
+
+    # Get a valid lower bound
+    lower_bound = get_valid_integer("Enter the lower bound: ")
+    
+    # Get a valid upper bound
+    while True:
+        upper_bound = get_valid_integer("Enter the upper bound: ")
+        if upper_bound > lower_bound:
+            break
+        print("The upper bound must be greater than the lower bound.")
+
+    # Generate a random number within the range
+    secret_number = random.randint(lower_bound, upper_bound)
+
+    print(f"Guess a number between {lower_bound} and {upper_bound}.")
+
+    # Start the guessing game
+    while True:
+        guess = get_valid_integer("Your guess: ") """
+    
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
