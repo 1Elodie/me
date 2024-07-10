@@ -77,10 +77,10 @@ def super_asker(low, high):
         try:
             input_number= int(input())
             print(input_number)
+            if low <= input_number <=high:
+                return input_number
         except Exception as e:
-            print('again'.format(e))            
-        if low <= input_number <=high:
-            return input_number
+            print('again'.format(e)) 
 
 
         
