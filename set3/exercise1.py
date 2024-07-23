@@ -43,12 +43,14 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
+    message = "give me number bewteen {low} and {high}: ".format(low=low, high = high)
+    input_number= int(input(message))
     while True:
-        input_number= int(input())
         if low <= input_number <=high:
             return input_number
         else:
-            print ("again")
+            print ("do it again")
+            return stubborn_asker(low, high)
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
@@ -60,10 +62,9 @@ def not_number_rejector(message):
     while True:
         try:
             input_number= int(input(message))
-            print(input_number)
             return input_number
         except Exception as e:
-            print('again'.format(e))
+            print('do it again'.format(e))
 
 
 
@@ -75,12 +76,11 @@ def super_asker(low, high):
     """
     while True:
         try:
-            input_number= int(input())
-            print(input_number)
+            input_number= int(input(f"Please enter an integer between {low} and {high}: "))
             if low <= input_number <=high:
                 return input_number
         except Exception as e:
-            print('again'.format(e)) 
+            print('do it again'.format(e)) 
 
 
         

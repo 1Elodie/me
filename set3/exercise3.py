@@ -26,39 +26,44 @@ def advancedGuessingGame():
     inside this function, think about reusable chunks of code that you can call
     in several places.
     Remember to think modular. Try to keep your functions small and single
-    purpose if you can!
+    purpose if you can!"""
 
-    def get_valid_integer(prompt):
-    
-    Prompt the user for a valid integer.
+def number(prompt):
     while True:
         try:
             return int(input(prompt))
         except ValueError:
-            print("Please enter a valid integer.")
+            print("Please enter a valid integer!")
 
 def advancedGuessingGame():
-    print("Welcome to the Advanced Guessing Game!")
+    print("😊Welcome to the Advanced Guessing Game!")
 
-    # Get a valid lower bound
-    lower_bound = get_valid_integer("Enter the lower bound: ")
+    lowerbound = number("Enter the lower bound: ")
+    upperbound = number("Enter the upper bound: ")
+
+    while upperbound <= lowerbound:
+        if upperbound == lowerbound:
+            print ("they cannot be equal, my friend.")
+        else:
+            print("please switch the positions of these two numbers or make a new one.")
+        lowerbound = number("Enter the lower bound: ")
+        upperbound = number("Enter the upper bound: ")
     
-    # Get a valid upper bound
-    while True:
-        upper_bound = get_valid_integer("Enter the upper bound: ")
-        if upper_bound > lower_bound:
-            break
-        print("The upper bound must be greater than the lower bound.")
+    actualNumber = random.randint(lowerbound, upperbound)
+    guessed = False
 
-    # Generate a random number within the range
-    secret_number = random.randint(lower_bound, upper_bound)
+    while not guessed:
+        guessednumber = number("guess a number: ")
 
-    print(f"Guess a number between {lower_bound} and {upper_bound}.")
+        if guessednumber < lowerbound or guessednumber > upperbound:
+            print(f"😰why you try this number?")
+        elif guessednumber < actualNumber:
+            print(f"it's small, try again.")
+        elif guessednumber > actualNumber:
+            print(f"it's big, try agian.")
+        else:
+            guessed = True
 
-    # Start the guessing game
-    while True:
-        guess = get_valid_integer("Your guess: ") """
-    
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 

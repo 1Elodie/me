@@ -8,7 +8,7 @@ f{....}
 
 !!!!!!!!!!!!!!!!!!!!!!【【【【【def fix_it have changed the ' True False'】】】】】】
 
-THIS IS SOME THINKING NOTES:
+【THIS IS SOME THINKING NOTES:
 
 choc_list = []：
 for i in range(8):
@@ -35,10 +35,13 @@ choc_list.append("💩")
             if(x<=y):
                 line.append(x)
         arr.append(line)
-    return arr
+    return arr】
 
     !!x from 0
 
-    coordinate??????
+    coordinate?
     return [['(i'+str(x)+',j'+str(y)+')' for y in range(5)] for x in range(10)]
     I don't know why my loops_5 still wrong.
+    
+    ok,now it's right
+
