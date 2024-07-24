@@ -1,1 +1,1 @@
-TODO: Reflect on what you learned this week and what is still unclear.
+    all in set 1-4 readme.md

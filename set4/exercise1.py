@@ -149,8 +149,8 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
-    gcode_file_path = r'C:\Users\87627\1161\me\set4\Trispokedovetiles(laser).gcode'
-    output_file_path = r'C:\Users\87627\1161\me\set4\lasers.pew.'
+    gcode_file_path = os.path.join(LOCAL, 'Trispokedovetiles(laser).gcode')
+    output_file_path = os.path.join(LOCAL, 'lasers.pew')
 
     mode1 = "r"
     with open(gcode_file_path, mode1) as gcode_file:
