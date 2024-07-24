@@ -48,8 +48,7 @@ def dictionary_please() -> dict:
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = some_number == 5
-    return well_is_it
+    return some_number in [5]
 
 
 def take_five(some_number) -> int:
@@ -142,8 +141,8 @@ def the_chain_gang_5(the_value) -> bool:
     TIP: you've already written a function that returns True if the value is 5
     TIP: you've already written a function that subtracts 5
     """
-    is_it_5 
-    return the_value
+    new_value = take_five(the_value)
+    return is_it_5(new_value)
 
 
 def pet_filter(letter="a") -> list:
