@@ -276,9 +276,9 @@ def fast_filler(number_of_words=200) -> str:
             with open(fname, 'w') as file:
                 json.dump(my_dict, file)
     else:
-        word_dict = make_filler_text_dictionary()
+        my_dict = make_filler_text_dictionary()
         with open(fname, 'w') as file:
-            json.dump(word_dict, file)
+            json.dump(my_dict, file)
 
     words = []
     for _ in range(number_of_words):
