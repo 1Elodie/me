@@ -43,27 +43,28 @@ def string_list_please() -> list[str]:
 
 def dictionary_please() -> dict:
     """Returns a dictionary, anything you like."""
-    return 
+    return {  }
 
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = None
+    well_is_it = some_number == 5
     return well_is_it
 
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    return None
+    subtracts_number = some_number - 5
+    return subtracts_number
 
 
 def greet(name="Towering Timmy") -> str:
     """Return a greeting.
     return a string of "Well hello, " and the name argument.
     E.g. if given as "Towering Timmy" it should
-         return "Well hello, Towering Timmy"
+        return "Well hello, Towering Timmy"
     """
-    return None
+    return f"Well hello, {name}"
 
 
 def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
@@ -71,8 +72,7 @@ def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:
     Return an integer.
     TIP: the test will use a different input_list, so don't just return 2
     """
-    count = None
-
+    count = input_list.count(1)
     return count
 
 
@@ -80,8 +80,7 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
-
+    count = input_list.count(search_for_this)
     return count
 
 
@@ -90,7 +89,7 @@ def fizz_buzz() -> list:
 
     This is the most famous basic programming test of all time!
 
-       "Write a program that prints the numbers from 1 to 100. But for
+        "Write a program that prints the numbers from 1 to 100. But for
         multiples of three print "Fizz" instead of the number and for
         the multiples of five print "Buzz". For numbers which are
         multiples of both three and five print "FizzBuzz"."
@@ -104,8 +103,15 @@ def fizz_buzz() -> list:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    # your code here
-
+    for i in range(1,101):
+        if i % 3 ==0 and i % 5 ==0:
+            fizz_buzz_list.append("FizzBuzz")
+        elif i % 5 ==0:
+            fizz_buzz_list.append("Buzz")
+        elif i % 3 ==0:
+            fizz_buzz_list.append("Fizz")
+        else:
+            fizz_buzz_list.append(i)
     return fizz_buzz_list
 
 
