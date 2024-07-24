@@ -283,8 +283,8 @@ def fast_filler(number_of_words=200) -> str:
     words = []
     for _ in range(number_of_words):
         word_length = random.randint(3, 7)
-        words = random.choice(my_dict[word_length])
-        words.append(words)
+        word = random.choice(my_dict[word_length])
+        words.append(word)
 
     paragraph = ' '.join(words)
     paragraph = paragraph.capitalize() + '.'

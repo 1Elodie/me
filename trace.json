@@ -360,7 +360,7 @@
   "7",
   {
     "of_total": 38,
-    "mark": 34,
+    "mark": 36,
     "results": [
       {
         "value": 1,
@@ -499,8 +499,8 @@
         "name": "\nrandom_filler_text:\n    given:    1000\n    expected: True\n    got:      True"
       },
       {
-        "value": 0,
-        "name": "\nfast_filler:\n    given:    [100]\n    expected: True\n    got:      'str' object has no attribute 'append'"
+        "value": 1,
+        "name": "\nfast_filler:\n    given:    100\n    expected: True\n    got:      True"
       },
       {
         "value": 0,
@@ -511,8 +511,8 @@
         "name": "\nfast_filler:\n    given:    [10]\n    expected: True\n    got:      'str' object is not callable"
       },
       {
-        "value": 0,
-        "name": "subsequent fast_filler failed: 'str' object has no attribute 'append'"
+        "value": 1,
+        "name": "subsequent fast_filler"
       }
     ],
     "week_number": 8
