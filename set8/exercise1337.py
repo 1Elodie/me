@@ -28,22 +28,24 @@ def password_please() -> str:
 
 def list_please() -> list[Any]:
     """Returns a list, you can put anything in the list."""
-    return list()
+    return ['***']
 
 
 def int_list_please() -> list[int]:
     """Returns a list of integers, any integers are fine."""
-    return list(int(i for i in range(5)))
+    return [0]
 
 
 def string_list_please() -> list[str]:
     """Returns a list of strings, any string are fine."""
-    return list(str('omg'))
+    return ['good luck.']
 
 
 def dictionary_please() -> dict:
     """Returns a dictionary, anything you like."""
-    return {  }
+    return { 
+        'Name':'mewmew'
+    }
 
 
 def is_it_5(some_number) -> bool:
@@ -172,11 +174,18 @@ def best_letter_for_pets() -> str:
     TIP: use the function you just wrote to help you here!
     TIP: you've seen this before in the pokedex.
     """
-    import string
+    from string import ascii_lowercase
+    max_list = 0
+    most_popular_letter = ''  
 
-    the_alphabet = string.ascii_lowercase
-    most_popular_letter = ""
+    #the_alphabet = string.ascii_lowercase
 
+    for letter in ascii_lowercase:
+        filtered_pets = pet_filter(letter)
+        if len(filtered_pets) > max_list:
+            max_list = len(filtered_pets)
+            most_popular_letter= letter
+    
     return most_popular_letter
 
 
@@ -207,7 +216,14 @@ def make_filler_text_dictionary() -> dict:
 
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
-
+    
+    for length in range(3,8):
+        words =[]
+        for _ in range(4):
+            response = requests.get(f'{url}{length}')
+            word = response.text.strip()
+            words.append(word)
+        wd[length] = words
     return wd
 
 
@@ -225,6 +241,10 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
 
     words = []
+    for _ in range(number_of_words):
+        word_length = random.randint(3, 7)
+        word = random.choice(my_dict[word_length])
+        words.append(word)
 
     return " ".join(words)
 
@@ -246,8 +266,21 @@ def fast_filler(number_of_words=200) -> str:
     """
 
     fname = "dict_cache.json"
+    if os.path.exists(fname):
+        with open(fname, 'r') as file:
+            my_dict = json.load(file)
+        my_dict = {int(k): v for k, v in my_dict.items()}
+    else:
+        my_dict = make_filler_text_dictionary()
+        with open(fname, 'w') as file:
+            json.dump(my_dict, file)
 
-    return None
+    words = []
+    for _ in range(number_of_words):
+        word_length = random.randint(3, 7)
+        words = random.choice(my_dict[word_length])
+    paragraph = " ".join(words).capitalize() + "."
+    return paragraph
 
 
 if __name__ == "__main__":
