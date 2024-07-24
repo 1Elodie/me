@@ -500,7 +500,7 @@
       },
       {
         "value": 0,
-        "name": "\nfast_filler:\n    given:    [100]\n    expected: True\n    got:      Expecting value: line 1 column 1 (char 0)"
+        "name": "\nfast_filler:\n    given:    [100]\n    expected: True\n    got:      'str' object has no attribute 'append'"
       },
       {
         "value": 0,
@@ -512,7 +512,7 @@
       },
       {
         "value": 0,
-        "name": "subsequent fast_filler failed: Expecting value: line 1 column 1 (char 0)"
+        "name": "subsequent fast_filler failed: 'str' object has no attribute 'append'"
       }
     ],
     "week_number": 8
