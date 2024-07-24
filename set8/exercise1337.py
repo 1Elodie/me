@@ -126,8 +126,10 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
-
-    return None
+    upper_string = input_string.upper()
+    Fire_string = '🔥'.join(list(upper_string))
+    result= f'🔥{Fire_string}🔥'
+    return result
 
 
 def the_chain_gang_5(the_value) -> bool:
@@ -140,8 +142,8 @@ def the_chain_gang_5(the_value) -> bool:
     TIP: you've already written a function that returns True if the value is 5
     TIP: you've already written a function that subtracts 5
     """
-
-    return None
+    is_it_5 
+    return the_value
 
 
 def pet_filter(letter="a") -> list:
@@ -158,7 +160,7 @@ def pet_filter(letter="a") -> list:
         "fancy rat and lab rat", "mink", "red fox", "hedgehog", "guppy"
     ]
     # fmt: on
-    filtered = []
+    filtered = [pet for pet in pets if letter in pet]
 
     return filtered
 
