@@ -55,7 +55,7 @@ def is_it_5(some_number) -> bool:
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    subtracts_number = some_number - 5
+    subtracts_number = some_number + (~4)
     return subtracts_number
 
 
