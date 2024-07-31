@@ -35,32 +35,43 @@ def number(prompt):
         except ValueError:
             print("Please enter a valid integer!")
 
+def super_asker(low, high, message="Please enter an integer"):
+    while True:
+        try:
+            input_number= int(input(f"{message} between {low} and {high}: "))
+            if low <= input_number <=high:
+                return input_number
+        except Exception as e:
+            print('do it again'.format(e)) 
+
 def advancedGuessingGame():
     print("😊Welcome to the Advanced Guessing Game!")
 
-    lowerbound = number("Enter the lower bound: ")
-    upperbound = number("Enter the upper bound: ")
+    lowerbound = super_asker(-5000, 5000, "Enter the lower bound ")
+    upperbound = super_asker(lowerbound + 2, 5000, "Enter the upper bound: ")
 
-    while upperbound <= lowerbound:
-        if upperbound == lowerbound:
-            print ("they cannot be equal, my friend.")
-        else:
-            print("please switch the positions of these two numbers or make a new one.")
-        lowerbound = number("Enter the lower bound: ")
-        upperbound = number("Enter the upper bound: ")
+    # while upperbound <= lowerbound:
+    #     if upperbound == lowerbound:
+    #         print ("they cannot be equal, my friend.")
+    #     else:
+    #         print("please switch the positions of these two numbers or make a new one.")
+    #     lowerbound = number("Enter the lower bound: ")
+    #     upperbound = number("Enter the upper bound: ")
     
     actualNumber = random.randint(lowerbound, upperbound)
     guessed = False
 
     while not guessed:
-        guessednumber = number("guess a number: ")
+        guessednumber = super_asker(lowerbound , upperbound, "guess a number: ")
 
         if guessednumber < lowerbound or guessednumber > upperbound:
-            print(f"😰why you try this number?")
+            print(f"😰 why you try this number?")
         elif guessednumber < actualNumber:
             print(f"it's small, try again.")
+            lowerbound=guessednumber
         elif guessednumber > actualNumber:
             print(f"it's big, try agian.")
+            upperbound=guessednumber
         else:
             guessed = True
 

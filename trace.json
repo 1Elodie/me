@@ -199,7 +199,7 @@
   },
   {
     "of_total": 29,
-    "mark": 28,
+    "mark": 29,
     "results": [
       {
         "value": 1,
@@ -254,7 +254,7 @@
         "name": "Exercise 3: guessing game, no range to guess in (delta 1)"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "Exercise 3: guessing game, no range to guess in (equal)"
       },
       {
@@ -279,43 +279,43 @@
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 54) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 11) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 68) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 3) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 91) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 7) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 90) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 49) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 8) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 9) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 31) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 74) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 15) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 35) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 12) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 14) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 48) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 61) randomly generated test value"
       },
       {
         "value": 1,
-        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 22) randomly generated test value"
+        "name": "Exercise 4: binary_search (low: 0, high: 100, target: 25) randomly generated test value"
       }
     ],
     "week_number": 3
@@ -360,7 +360,7 @@
   "7",
   {
     "of_total": 38,
-    "mark": 36,
+    "mark": 34,
     "results": [
       {
         "value": 1,
@@ -499,8 +499,8 @@
         "name": "\nrandom_filler_text:\n    given:    1000\n    expected: True\n    got:      True"
       },
       {
-        "value": 1,
-        "name": "\nfast_filler:\n    given:    100\n    expected: True\n    got:      True"
+        "value": 0,
+        "name": "\nfast_filler:\n    given:    [100]\n    expected: True\n    got:      name 'words' is not defined"
       },
       {
         "value": 0,
@@ -511,8 +511,8 @@
         "name": "\nfast_filler:\n    given:    [10]\n    expected: True\n    got:      'str' object is not callable"
       },
       {
-        "value": 1,
-        "name": "subsequent fast_filler"
+        "value": 0,
+        "name": "subsequent fast_filler failed: name 'words' is not defined"
       }
     ],
     "week_number": 8
